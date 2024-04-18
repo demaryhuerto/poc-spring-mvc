@@ -15,12 +15,6 @@ public class UserController {
 
   private final UserRepository userRepository;
 
-  @GetMapping("/{id}")
-  @ResponseStatus(HttpStatus.OK)
-  public User getUserById(@PathVariable("id") String userId) {
-    return userRepository.findById(userId).orElseThrow();
-  }
-
   @GetMapping("/email/{email}")
   @ResponseStatus(HttpStatus.OK)
   public Optional<User> getUserByEmail(@PathVariable("email") String email) {
